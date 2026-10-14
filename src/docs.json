@@ -565,6 +565,7 @@
                         ]
                       },
                       "oss/openwiki/integrations",
+                      "oss/openwiki/search-and-link",
                       "oss/openwiki/visualize",
                       "oss/openwiki/cli-reference",
                       "oss/openwiki/customize",
@@ -1152,6 +1153,7 @@
                         ]
                       },
                       "oss/openwiki/integrations",
+                      "oss/openwiki/search-and-link",
                       "oss/openwiki/visualize",
                       "oss/openwiki/cli-reference",
                       "oss/openwiki/customize",
