@@ -54,7 +54,7 @@ This minor line is still a release candidate. The last stable release is `0.16.0
 
 ## v0.16
 
-Latest version: `0.16.0`
+Latest version: `0.16.1`
 ### Changes
 
 #### New Features
@@ -96,6 +96,7 @@ Latest version: `0.16.0`
 - Fixes delta channels reading back empty or incomplete on threads where `update_state` ran under langgraph before 1.2.13.
 - Speeds up DeltaChannel reads on Postgres for threads that existed before the channel was added and had `update_state` run under langgraph before 1.2.13.
 - Fixes a prune that could delete DeltaChannel history needed by later reads on threads where `update_state` ran under langgraph before 1.2.13.
+- Preserves request IDs in worker logs for runs started or resumed through HTTP event-streaming commands.
 
 #### Security
 - Update the Go toolchain to 1.26.8 and upgrade golang.org/x/mod to address checksum database verification vulnerabilities.
@@ -105,8 +106,19 @@ Latest version: `0.16.0`
 - Ensure LangGraph Server images install AnyIO 4.14.2 or newer to address upstream security vulnerabilities.
 - JS/TS custom auth handlers now have their request mutations applied by the server, including the store namespace rewrite used to scope items per user. This fixes cross-user store isolation in LangGraph.js deployments following the documented pattern. Namespaces produced by any custom auth handler, Python or JS, are now validated before reaching the store: an empty or period-containing label is rejected with 422 instead of writing an item that cannot be read back.
 - Updates bundled Datadog serverless-init, ddtrace, langgraph-sdk, and MongoDB Go driver to clear known CVEs.
+- Updates Agent Server's Go toolchain and HTTP/2 dependencies with upstream security fixes.
 
 <Accordion title="v0.16 releases">
+<Update label="2026-10-15" tags={["agent-server"]}>
+## v0.16.1
+
+### Fixes
+- Preserves request IDs in worker logs for runs started or resumed through HTTP event-streaming commands.
+
+### Security
+- Updates Agent Server's Go toolchain and HTTP/2 dependencies with upstream security fixes.
+
+</Update>
 <Update label="2026-10-09" tags={["agent-server"]}>
 ## v0.16.0
 
